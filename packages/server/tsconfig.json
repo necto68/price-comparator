@@ -1,0 +1,8 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist" // Output directory for compiled files
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

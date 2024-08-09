@@ -1,0 +1,30 @@
+{
+  "name": "@price-comparator/server",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx ./src/index.ts",
+    "lint": "eslint ./src/ --fix",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@price-comparator/common": "workspace:^",
+    "@reyaxyz/api-sdk": "^0.115.0",
+    "@vertex-protocol/client": "^0.43.0",
+    "ethers": "^6.13.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "^22.1.0",
+    "@types/ws": "^8.5.12",
+    "@vercel/style-guide": "^6.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "tsx": "^4.17.0",
+    "typescript": "5.3.3"
+  }
+}

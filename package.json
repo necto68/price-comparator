@@ -1,0 +1,8 @@
+{
+  "name": "price-comparator",
+  "packageManager": "yarn@4.4.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
