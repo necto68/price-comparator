@@ -6,7 +6,7 @@ It can show aggregated price data from different sources.
 
 ## Environment variables
 
-You need to create `.env.local` file with `WEBSOCKET_SERVER_URL` for local development.
+You need to create `.env.local` file with `VITE_WEBSOCKET_SERVER_URL` for local development.
 
 Also need to provide this variable on production build phase.
 
