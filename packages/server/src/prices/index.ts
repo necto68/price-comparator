@@ -1,8 +1,11 @@
 import { type MarketId, SourceId } from '@price-comparator/common';
-import { getMarketsWithSubscribers } from '../database/markets';
-import { getPriceMessage, sendMessageToMarketSubscribers } from '../messages';
-import { getPriceBySourceId } from '../price-fetchers';
-import { PRICES_UPDATE_INTERVAL } from './constants';
+import { getMarketsWithSubscribers } from '../database/markets.js';
+import {
+  getPriceMessage,
+  sendMessageToMarketSubscribers,
+} from '../messages/index.js';
+import { getPriceBySourceId } from '../price-fetchers/index.js';
+import { PRICES_UPDATE_INTERVAL } from './constants.js';
 
 interface Param {
   marketId: MarketId;

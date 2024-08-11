@@ -1,7 +1,7 @@
 import { SourceId, type MarketId } from '@price-comparator/common';
-import { type PriceFetcherResult } from './types';
-import { getReyaPrice } from './reya';
-import { getVertexPrice } from './vertex';
+import { type PriceFetcherResult } from './types.js';
+import { getReyaPrice } from './reya.js';
+import { getVertexPrice } from './vertex.js';
 
 const sourceIdToPriceFetcherMap = new Map<
   SourceId,

@@ -1,6 +1,6 @@
 import { ApiClient } from '@reyaxyz/api-sdk';
 import { MarketId } from '@price-comparator/common';
-import { type PriceFetcherResult } from './types';
+import { type PriceFetcherResult } from './types.js';
 
 ApiClient.configure('production');
 

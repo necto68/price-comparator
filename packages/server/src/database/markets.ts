@@ -1,5 +1,5 @@
 import { type MarketId } from '@price-comparator/common';
-import { isValidMarketId } from '@price-comparator/common/src/utils/market';
+import { isValidMarketId } from '@price-comparator/common';
 
 const marketToSubscribersMap = new Map<MarketId, Set<string>>();
 

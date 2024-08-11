@@ -1,4 +1,4 @@
-import { type Message, MessageType } from '../types/message';
+import { type Message, MessageType } from '../types/index.js';
 
 export const isValidMessageType = (messageType: MessageType): boolean =>
   Object.values(MessageType).includes(messageType);

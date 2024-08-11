@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -b && vite build",
+    "build": "yarn build:common && yarn build:ui",
+    "build:common": "yarn workspace @price-comparator/common build",
+    "build:ui": "tsc -b && vite build",
     "dev": "vite",
     "lint": "eslint . --fix",
     "preview": "vite preview"

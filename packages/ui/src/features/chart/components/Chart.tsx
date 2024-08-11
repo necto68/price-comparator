@@ -10,6 +10,7 @@ interface ChartProps {
 
 export const Chart: FC<ChartProps> = ({ marketId }) => {
   const chartRef = useRef<BaseChart>();
+
   const {
     subscribedMarkets,
     subscribeToMarket,
@@ -22,18 +23,29 @@ export const Chart: FC<ChartProps> = ({ marketId }) => {
       title: {
         text: marketId,
       },
+      plotOptions: {
+        series: {
+          marker: {
+            fillColor: '#FFFFFF',
+            lineWidth: 2,
+            lineColor: null, // inherit from series
+          },
+        },
+      },
       series: [
         {
           type: 'line',
           name: 'Reya',
           color: 'black',
           data: [],
+          marker: { enabled: true },
         },
         {
           type: 'line',
           name: 'Vertex',
           color: '#7e61ed',
           data: [],
+          marker: { enabled: true },
         },
       ],
     }),
@@ -42,7 +54,6 @@ export const Chart: FC<ChartProps> = ({ marketId }) => {
 
   useEffect(() => {
     const chart = chartRef.current;
-
     if (latestPriceMessageData) {
       const {
         marketId: messageMarketId,
@@ -57,9 +68,7 @@ export const Chart: FC<ChartProps> = ({ marketId }) => {
 
         const { points } = series;
         const prevPoint = points[points.length - 1];
-        const { x: prevPointX, y: prevPointY } = prevPoint
-          ? prevPoint
-          : { x: 0, y: 0 };
+        const prevPointX = prevPoint ? prevPoint.x : 0;
 
         const animationOptions = {
           defer: 0,
@@ -67,7 +76,7 @@ export const Chart: FC<ChartProps> = ({ marketId }) => {
           easing: 'linear',
         };
 
-        if (timestamp > prevPointX && price !== prevPointY) {
+        if (timestamp > prevPointX) {
           series.addPoint([timestamp, price], true, false, animationOptions);
         }
       }

@@ -1,7 +1,7 @@
 import { MarketId } from '@price-comparator/common';
 import { createVertexClient } from '@vertex-protocol/client';
-import { JsonRpcProvider } from 'ethers';
-import { type PriceFetcherResult } from './types';
+import { providers } from 'ethers';
+import { type PriceFetcherResult } from './types.js';
 
 const marketIdToVertexProductIdMap = new Map<MarketId, number>([
   [MarketId.BTCUSD, 2],
@@ -12,7 +12,7 @@ const marketIdToVertexProductIdMap = new Map<MarketId, number>([
   [MarketId.AVAXUSD, 52],
 ]);
 
-const provider = new JsonRpcProvider('https://arb1.arbitrum.io/rpc');
+const provider = new providers.JsonRpcProvider('https://arb1.arbitrum.io/rpc');
 
 export const getVertexPrice = async (
   marketId: MarketId,

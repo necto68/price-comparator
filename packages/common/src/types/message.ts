@@ -1,5 +1,5 @@
-import type { MarketId } from './market';
-import type { SourceId } from './source';
+import type { MarketId } from './market.js';
+import type { SourceId } from './source.js';
 
 interface TypedMessage<Type, Data> {
   data: Data;

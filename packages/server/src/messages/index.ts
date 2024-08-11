@@ -5,12 +5,12 @@ import {
   type MarketId,
   type SourceId,
 } from '@price-comparator/common';
-import { getSocketByUser } from '../database/sockets';
+import { getSocketByUser } from '../database/sockets.js';
 import {
   getSubscribersByMarketId,
   subscribeUserToMarket,
   unsubscribeUserFromMarket,
-} from '../database/markets';
+} from '../database/markets.js';
 
 export const processMessage = (userId: string, message: Message): void => {
   const { type, data } = message;

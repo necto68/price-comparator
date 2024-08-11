@@ -1,10 +1,10 @@
 import crypto from 'node:crypto';
 import { getParsedMessage } from '@price-comparator/common';
 import { WebSocketServer } from 'ws';
-import { processMessage } from './messages';
-import { unsubscribeUserFromMarkets } from './database/markets';
-import { addSocketByUser, deleteSocketByUser } from './database/sockets';
-import { initPricesUpdater } from './prices';
+import { processMessage } from './messages/index.js';
+import { unsubscribeUserFromMarkets } from './database/markets.js';
+import { addSocketByUser, deleteSocketByUser } from './database/sockets.js';
+import { initPricesUpdater } from './prices/index.js';
 
 const port = process.env.PORT ? Number(process.env.PORT) : 8080;
 

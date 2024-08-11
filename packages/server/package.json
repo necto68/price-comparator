@@ -1,18 +1,20 @@
 {
   "name": "@price-comparator/server",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "type": "module",
+  "module": "./dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsx ./src/index.ts",
-    "lint": "eslint ./src/ --fix",
+    "build": "yarn build:common && tsc",
+    "build:common": "yarn workspace @price-comparator/common build",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint src/ --fix",
     "start": "node dist/index.js"
   },
   "dependencies": {
     "@price-comparator/common": "workspace:^",
     "@reyaxyz/api-sdk": "^0.115.0",
     "@vertex-protocol/client": "^0.43.0",
-    "ethers": "^6.13.2",
+    "ethers": "^5.7.2",
     "ws": "^8.18.0"
   },
   "devDependencies": {
